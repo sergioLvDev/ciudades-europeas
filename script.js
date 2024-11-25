@@ -12,11 +12,9 @@ fetch("./ciudades.json")
     // Asignar un evento único a cada botón
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        console.log(button);
         // Eliminar la clase activa de todos los botones
         buttons.forEach((btn) => {
           btn.classList.remove("active");
-          console.log(btn);
         });
         // Añadir la clase activa al botón actual
         button.classList.add("active");
@@ -28,7 +26,6 @@ fetch("./ciudades.json")
 
         // Si se encuentra la ciudad, actualizar el contenido
         if (ciudadData) {
-          console.log(ciudadData.imagen);
           img.src = ciudadData.imagen || "no hay imagen";
           img.alt = ciudadData.ciudad;
           titulo.innerHTML = ciudadData.titulo || "Título no disponible";
